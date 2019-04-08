@@ -1,0 +1,47 @@
+<template>
+
+  <div class="cont">
+
+    <div class="key-input" class.bind="showKeyInput ? '' : 'hidden'">
+      <p class="title is-6">Please Enter Your API Key</p>
+      <input class="input" value.bind="apiKey">
+      <button class="button is-primary" click.delegate="submitController()">Submit</button>
+      </div>
+
+      <div class="loading" class.bind="showLoader ? 'hidden' : ''">
+        <img src="./src/atts/ytloader.gif">
+        <p>Loading...</p>
+        </div>
+
+      <div class="" class.bind="showLoader ? '' : 'hidden'">
+      <div class="results"  class.bind="showKeyInput ? 'hidden' : ''">
+          <table class="table is-striped is-narrow">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>From</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  repeat.for="item of displayArray">
+                    <td class="name">${item.name}</td>
+                    <td>${item.from}</td>
+                    <td>${item.time}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+         <div class="button-cont">
+         <button class="button is-primary change-button" click.delegate="clearKey()">Change API Key</button>
+         </div>
+         </div>
+        </div>
+
+        <div class="results">
+          </div>
+
+        </div>
+
+    </div>
+</template>
