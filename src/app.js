@@ -19,7 +19,6 @@ export class App {
 
   activate(){
     this.checkIfKeyExists();
-    this.getStartDate(20190330)
   }
 
   submitController(){
@@ -62,8 +61,11 @@ export class App {
     var month = this.addZero(date.getMonth() + 1)
     var day = actualStartDate.slice(6,8)
     var year = date.getFullYear();
-    if (day >= this.addZero(date.getDay())){
+    if (day >= this.addZero(date.getDate())){
       month = this.addZero(date.getMonth())
+      console.log(actualStartDate)
+      console.log(day)
+      console.log(date.getDate())
     }
     if (month == "02" && day > "28") {
       day = "28"
